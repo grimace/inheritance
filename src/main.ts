@@ -8,5 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule).then((moduleRef) => {
+   console.log('bootstrap... : ',moduleRef);
+   // AppInjector.setInjector(moduleRef.injector);
+}).catch(err => console.error(err));
